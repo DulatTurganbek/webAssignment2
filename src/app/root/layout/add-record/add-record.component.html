@@ -1,0 +1,45 @@
+<form class="float-left mr-4">
+  <h1 class="ml-3">Add record</h1>
+  <p class="ml-3">Jogging date:</p>
+  <div class="input-group mb-3 ml-3">
+    <div class="input-group-prepend">
+      <input  #date type="text" class="form-control" placeholder="mm/dd/yy" aria-label="mm/dd/yy" aria-describedby="basic-addon1" style="width:450px">
+    </div>
+  </div>
+  <p class="ml-3">Distance (m)</p>
+  <div class="input-group mb-3 ml-3">
+    <div class="input-group-prepend">
+      <input  #dist type="text" class="form-control" placeholder="0" aria-label="0" aria-describedby="basic-addon1" style="width:450px">
+    </div>
+  </div>
+  <p class="ml-3">Time (s)</p>
+  <div class="input-group mb-3 ml-3">
+    <div class="input-group-prepend">
+      <input #time type="text" class="form-control" placeholder="0" aria-label="0" aria-describedby="basic-addon1" style="width:450px">
+    </div>
+  </div>
+  <button (click)="onsubmit(date.value, dist.value, time.value)" type="button" class="btn btn-primary ml-3">Save</button>
+</form>
+<h1>My results</h1>
+<button type="button" class="btn btn-primary ">New</button>
+<table class="table mt-4" style="width: 1000px ">
+  <thead style="background-color: #e6e6e6">
+  <tr>
+    <th scope="col">Date</th>
+    <th scope="col">Distance in meters</th>
+    <th scope="col">Time</th>
+    <th scope="col">Average speed</th>
+    <th scope="col">Options</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let element of results">
+    <td>{{element.date}}</td>
+    <td>{{element.dist}}</td>
+    <td>{{element.time}}</td>
+    <td>13.50</td>
+    <td>Edit Delete</td>
+
+  </tr>
+  </tbody>
+</table>
